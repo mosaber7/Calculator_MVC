@@ -61,17 +61,17 @@ struct CalculatorModel{
         let newValueDouble: Double = Double(newVal)!
         switch mathOperator{
                case "+":
-                    resultVal = String(oldValDouble + newValueDouble)
+                resultVal = String(format: "%.2f", oldValDouble + newValueDouble)
                 case "-":
-                    resultVal = String(oldValDouble - newValueDouble)
+                    resultVal = String(format: "%.2f", oldValDouble - newValueDouble)
                 case "x":
-                    resultVal = String(oldValDouble * newValueDouble)
+                    resultVal = String(format: "%.2f", oldValDouble * newValueDouble)
                 case "/":
                     if newValueDouble != 0{
-                        resultVal = String(oldValDouble / newValueDouble)
+                        resultVal = String(format: "%.2f", oldValDouble / newValueDouble)
                             }
                 case "%":
-                    resultVal = String(oldValDouble.truncatingRemainder(dividingBy: newValueDouble))
+                    resultVal = String(format: "%.2f", oldValDouble.truncatingRemainder(dividingBy: newValueDouble))
                 default:
                     resultVal = oldVal
                 }
