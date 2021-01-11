@@ -14,6 +14,7 @@ struct CalculatorModel{
     //the defulat that the number doesn't have a decimal point
     var decimalNumber: Bool = false
     
+    var hasAmathoperator: Bool = false
     
     mutating func numberButtonTapped(_ num: String)-> String{
         //checks if the tapped number id the first one or not
@@ -38,15 +39,18 @@ struct CalculatorModel{
     }
     
     mutating func mathOperationButtonTapped(_ mathOperator: String)-> String{
+        
         //checks if there is a previous calculations
-        if resultVal.isEmpty{
+        if resultVal.isEmpty, !hasAmathoperator{
             oldVal = newVal
+            hasAmathoperator = true
         }
-        else{
+        else if !hasAmathoperator{
             oldVal = resultVal
+            hasAmathoperator = true
         }
-        newVal = ""
         self.mathOperator = mathOperator
+        newVal = ""
         resultVal = ""
         decimalNumber = false
         return ""
@@ -75,12 +79,8 @@ struct CalculatorModel{
                 default:
                     resultVal = oldVal
                 }
-                
-            
-            
-        
+        hasAmathoperator = false
         return resultVal
-        
     }
     mutating func clearAll()-> String{
         oldVal = ""
@@ -88,6 +88,7 @@ struct CalculatorModel{
         mathOperator = ""
         resultVal = ""
         decimalNumber = false
+        hasAmathoperator = false
         return "0"
         
     }
