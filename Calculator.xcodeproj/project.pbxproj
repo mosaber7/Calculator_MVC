@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		054E9AFA25AC62820054706C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E9AF925AC62820054706C /* AppDelegate.swift */; };
 		054E9AFC25AC62820054706C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E9AFB25AC62820054706C /* SceneDelegate.swift */; };
-		054E9AFE25AC62820054706C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E9AFD25AC62820054706C /* ViewController.swift */; };
+		054E9AFE25AC62820054706C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E9AFD25AC62820054706C /* CalculatorViewController.swift */; };
 		054E9B0125AC62820054706C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054E9AFF25AC62820054706C /* Main.storyboard */; };
 		054E9B0325AC62820054706C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 054E9B0225AC62820054706C /* Assets.xcassets */; };
 		054E9B0625AC62820054706C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 054E9B0425AC62820054706C /* LaunchScreen.storyboard */; };
+		054E9B0F25AC64240054706C /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 054E9B0E25AC64240054706C /* CalculatorModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		054E9AF625AC62820054706C /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		054E9AF925AC62820054706C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		054E9AFB25AC62820054706C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		054E9AFD25AC62820054706C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		054E9AFD25AC62820054706C /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		054E9B0025AC62820054706C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		054E9B0225AC62820054706C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		054E9B0525AC62820054706C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		054E9B0725AC62820054706C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		054E9B0E25AC64240054706C /* CalculatorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				054E9AF925AC62820054706C /* AppDelegate.swift */,
 				054E9AFB25AC62820054706C /* SceneDelegate.swift */,
-				054E9AFD25AC62820054706C /* ViewController.swift */,
+				054E9AFD25AC62820054706C /* CalculatorViewController.swift */,
+				054E9B0E25AC64240054706C /* CalculatorModel.swift */,
 				054E9AFF25AC62820054706C /* Main.storyboard */,
 				054E9B0225AC62820054706C /* Assets.xcassets */,
 				054E9B0425AC62820054706C /* LaunchScreen.storyboard */,
@@ -137,9 +140,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				054E9AFE25AC62820054706C /* ViewController.swift in Sources */,
+				054E9AFE25AC62820054706C /* CalculatorViewController.swift in Sources */,
 				054E9AFA25AC62820054706C /* AppDelegate.swift in Sources */,
 				054E9AFC25AC62820054706C /* SceneDelegate.swift in Sources */,
+				054E9B0F25AC64240054706C /* CalculatorModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
