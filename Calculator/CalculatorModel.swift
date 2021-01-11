@@ -54,28 +54,30 @@ struct CalculatorModel{
     }
     
     mutating func equalButtonTapped() -> String{
+        if newVal.isEmpty{return "0"}
+        if mathOperator.isEmpty{return newVal}
         
-        if let oldValDouble = Double(oldVal){
-            if let newValueDouble: Double = Double(newVal){
-                switch mathOperator{
-                    case "+":
-                        resultVal = String(oldValDouble + newValueDouble)
-                    case "-":
-                        resultVal = String(oldValDouble - newValueDouble)
-                    case "x":
-                        resultVal = String(oldValDouble * newValueDouble)
-                    case "/":
-                        if newValueDouble != 0{
+        let oldValDouble: Double = Double(oldVal)!
+        let newValueDouble: Double = Double(newVal)!
+        switch mathOperator{
+               case "+":
+                    resultVal = String(oldValDouble + newValueDouble)
+                case "-":
+                    resultVal = String(oldValDouble - newValueDouble)
+                case "x":
+                    resultVal = String(oldValDouble * newValueDouble)
+                case "/":
+                    if newValueDouble != 0{
                         resultVal = String(oldValDouble / newValueDouble)
                             }
-                    case "%":
-                        resultVal = String(oldValDouble.truncatingRemainder(dividingBy: newValueDouble))
-                    default:
-                        resultVal = oldVal
+                case "%":
+                    resultVal = String(oldValDouble.truncatingRemainder(dividingBy: newValueDouble))
+                default:
+                    resultVal = oldVal
                 }
                 
-            }else{ return oldVal}
-            }
+            
+            
         
         return resultVal
         
