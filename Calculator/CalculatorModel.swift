@@ -14,7 +14,6 @@ struct CalculatorModel{
     //the defulat that the number doesn't have a decimal point
     var decimalNumber: Bool = false
     
-    var hasAmathoperator: Bool = false
     
     mutating func numberButtonTapped(_ num: String)-> String{
         //checks if the tapped number id the first one or not
@@ -41,13 +40,11 @@ struct CalculatorModel{
     mutating func mathOperationButtonTapped(_ mathOperator: String)-> String{
         
         //checks if there is a previous calculations
-        if resultVal.isEmpty, !hasAmathoperator{
+        if resultVal.isEmpty{
             oldVal = newVal
-            hasAmathoperator = true
         }
-        else if !hasAmathoperator{
+        else {
             oldVal = resultVal
-            hasAmathoperator = true
         }
         self.mathOperator = mathOperator
         newVal = ""
@@ -59,10 +56,8 @@ struct CalculatorModel{
     
     mutating func equalButtonTapped() -> String{
         if newVal.isEmpty{return "0"}
-        if mathOperator.isEmpty{return newVal}
-        
-        let oldValDouble: Double = Double(oldVal)!
-        let newValueDouble: Double = Double(newVal)!
+        if oldVal.isEmpty{return newVal}
+        if let oldValDouble: Double = Double(oldVal), let newValueDouble: Double = Double(newVal){
         switch mathOperator{
                case "+":
                 resultVal = String(format: "%.2f", oldValDouble + newValueDouble)
@@ -74,12 +69,23 @@ struct CalculatorModel{
                     if newValueDouble != 0{
                         resultVal = String(format: "%.2f", oldValDouble / newValueDouble)
                             }
+                    else{
+                        resultVal = "0"
+                        newVal = ""
+                        mathOperator = ""
+                    }
                 case "%":
-                    resultVal = String(format: "%.2f", oldValDouble.truncatingRemainder(dividingBy: newValueDouble))
+                    if newValueDouble == 0{
+                        resultVal = oldVal
+                    }else{
+                        resultVal = String(format: "%.2f", oldValDouble.truncatingRemainder(dividingBy: newValueDouble))
+                        
+                    }
                 default:
-                    resultVal = oldVal
+                    break
                 }
-        hasAmathoperator = false
+        }
+        mathOperator = ""
         return resultVal
     }
     mutating func clearAll()-> String{
@@ -88,7 +94,6 @@ struct CalculatorModel{
         mathOperator = ""
         resultVal = ""
         decimalNumber = false
-        hasAmathoperator = false
         return "0"
         
     }
